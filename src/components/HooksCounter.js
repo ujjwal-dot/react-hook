@@ -1,10 +1,23 @@
 import React, { useState } from 'react'
 
 function HooksCounter() {
-    const[count,setCount]=useState(0)
+    const initialCount = 0
+    const[count,setCount]=useState(initialCount)
+
+    const increaseByFive=()=>{
+        for(let i=0;i<5;i++){
+            setCount((prevCount)=> prevCount+1)
+        }
+    }
   return (
     <div>
-        <button onClick={()=>{setCount(count+1)}}>Count {count}</button>
+        Count {count} 
+        <button onClick={()=>{setCount(initialCount)}}>Reset</button>
+        <button onClick={()=>{setCount((prevCount)=> prevCount+1)}}>Inc</button>
+        <button onClick={()=>{setCount((prevCount)=> prevCount-1)}}>Dec</button>
+        <button onClick={increaseByFive}>Inc5</button>
+
+
     </div>
   )
 }
