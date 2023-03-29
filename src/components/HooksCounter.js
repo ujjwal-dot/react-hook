@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 
 function HooksCounter() {
     const initialCount = 0
@@ -9,6 +9,8 @@ function HooksCounter() {
             setCount((prevCount)=> prevCount+1)
         }
     }
+
+   
   return (
     <div>
         Count {count} 
